@@ -19,14 +19,13 @@ import {
     Image,
     Popconfirm,
 } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 const RichTextEditor = ({
     isCreate = false,
     isEdit = false,
-    dataEdit = {},
     tags,
     categories,
     onSubmit = () => {},
@@ -65,10 +64,6 @@ const RichTextEditor = ({
     const [thumbnailImage, setThumbnailImage] = useState(null);
     const [blogImage, setBlogImage] = useState(null);
 
-    useEffect(() => {
-        console.log(content);
-    }, [content]);
-
     const handleChange = (info, type) => {
         const { file, fileList } = info;
         console.log(info);
@@ -90,17 +85,6 @@ const RichTextEditor = ({
             message.error("Image upload failed");
         }
     };
-
-    useEffect(() => {
-        if (isEdit) {
-            setContent(dataEdit);
-            form.setFieldsValue(dataEdit);
-        }
-    }, [isEdit, dataEdit]);
-
-    // useEffect(() => {
-    //     console.log("Content:", content);
-    // }, [content]);
 
     return (
         <div
@@ -460,11 +444,6 @@ const RichTextEditor = ({
                         theme="snow"
                         modules={{
                             toolbar: [
-                                // [
-                                //     { header: "1" },
-                                //     { header: "2" },
-                                //     { font: [] },
-                                // ],
                                 [
                                     { header: [1, 2, 3, 4, 5, 6, false] },
                                     { font: [] },
