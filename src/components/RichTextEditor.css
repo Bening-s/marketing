@@ -1,0 +1,32 @@
+/* RichTextEditor.css */
+.rich-text-editor {
+    margin: 20px;
+    background-color: white;
+}
+
+.ql-container {
+    height: 200px;
+    background-color: #fff;
+}
+
+button {
+    margin-top: 20px;
+}
+.App div[style*="minHeight:100px"] img {
+    max-height: 100px;
+    width: auto;
+}
+
+.image-uploader-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.image-uploader-section {
+    margin-bottom: 24px;
+}
+
+.uploaded-image-preview {
+    margin-top: 16px;
+    text-align: center;
+}
